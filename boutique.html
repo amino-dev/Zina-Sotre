@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zina Store</title>
+    <!--                Stylesheets             -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">  
+    <link rel="icon"  href="images/Logo/logo.png">
+</head>
+<body>
+    <!--                Nav bar start              -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a href="boutique.html">
+                <img id="logo-navbar" src="images/Logo/logo.png" alt="logo" >
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mx-auto me-lg-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li>
+                    <form class="d-flex search-form">
+                       <input class="form-control searchbox" type="search" placeholder="Chercher" aria-label="Search">
+                       <div class="input-group-btn">
+                        <button class="btn btn-search" id="btn-search" type="submit"><i class="fas fa-search nav-icon"></i></button>
+                       </div>
+                    </form>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li>
+                    <button type="button" class="btn nav-btn mt-3 mb-3">
+                        <img src="images/Theme/moon.png" alt="" id="icon">
+                    </button>
+                </li>
+                <li>
+                    <!-- Log in trigger modal -->
+                    <button type="button" class="btn nav-btn mt-3 mb-3 me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="fas fa-user nav-icon"></i>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Se connecter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <!-- Email -->
+                            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                            <!-- Password -->
+                            <input type="password" id="defaultLoginFormPassword" required class="form-control mb-4" placeholder="Mot de passe">
+                            <div class="d-flex justify-content-around">
+                              <div>
+                                <!-- Remember me -->
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                    <label class="custom-control-label" for="defaultLoginFormRemember">Souvenir de moi</label>
+                                  </div>
+                              </div>
+                              <div>
+                                <!-- Forgot password -->
+                                <a href="">Mot de passe oublié ?</a>
+                              </div>
+                            </div>
+                            <!-- Sign in modal button -->
+                            <div class="col-md-12">
+                              <div>
+                                <button class="btn my-4 btn-block w-100" type="submit">Se connecter</button>
+                              </div>
+                            </div>
+                            <!-- Register -->
+                            <p class="text-center">Pas un membre?
+                              <a href="">S'inscrire</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="btn nav-btn mt-3 mb-3 me-3">
+                        <i class="fas fa-heart nav-icon"></i>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn nav-btn mt-3 mb-3">
+                        <i class="fas fa-shopping-cart nav-icon"><span class="badge ms-1">0</span></i>
+                    </button>
+                </li>
+            </ul> 
+          </div>
+        </div>
+    </nav>
+    <!--                Nav bar end              -->
+    <!--                Header image start           -->
+    <img src="images/Header/cover.webp" class="w-100 cover-img" alt="">
+    <!--                Header image end         -->
+    <!--                Products section start          -->
+    <section class="products-section">
+        <div class="container-fluid col-md-12">
+            <div class="row pt-5">
+                <!--           side bar start             -->
+                <div class="col-md-3 col-12 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                         <h2 class="text-center mb-5">Filtrer par</h2>
+                         <h4 class="mb-4">Catégories</h4>
+                         <dl>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5">
+                              <input type="checkbox" class="custom-control-input" id="customCheck1">
+                              <label class="custom-control-label" for="customCheck1">Homme</label>
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Montres</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Bracelets</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Lunettes</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5">
+                              <input type="checkbox" class="custom-control-input" id="customCheck2">
+                              <label class="custom-control-label" for="customCheck2">Femme</label>
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Montres</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Bracelets</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Boucles d'oreille</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Anneaux</label> 
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-checkbox mb-5 ms-5">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Colliers</label> 
+                            </div>
+                           </dd>
+                         </dl>
+                         <h4 class="mb-4">Prix</h4>
+                         <dl>
+                           <dd>
+                            <div class="custom-control custom-radio mb-5">
+                               <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+                               <label class="custom-control-label" for="defaultUnchecked">Moins  de 50 TND</label>
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-radio mb-5">
+                               <input type="radio" class="custom-control-input" id="defaultUnchecked1" name="defaultExampleRadios">
+                               <label class="custom-control-label" for="defaultUnchecked1">Entre 50 et 100 TND</label>
+                            </div>
+                           </dd>
+                           <dd>
+                            <div class="custom-control custom-radio">
+                               <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios">
+                               <label class="custom-control-label" for="defaultUnchecked2">Plus que 100 TND</label>
+                            </div>
+                           </dd>
+                         </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--           side bar end               -->
+                <!--           products card start           -->
+                <div class="col-md-9 col-12">
+                    <div class="row me-3">
+                        <div class="top-filter d-flex justify-content-lg-end justify-content-md-end  justify-content-sm-center">
+                            <form>
+                                <div class="d-flex mb-5">
+                                 <label for="exampleFormControlSelect1" class="me-2 filter-label">Tri</label>
+                                 <select class="form-control filter-option ml-4 col-md-9 col-9" id="exampleFormControlSelect1">
+                                 <option>Le moins cher</option>
+                                 <option>Le plus cher</option>
+                                </select>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Armin Anneaux Ensemble A006 - 5 Pcs.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Armin Anneaux Ensemble A006 - 5 Pcs</p>
+                                        <p>40 DT</p>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                       Ajouter au panier
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                             <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                             Produit ajouté avec succés au panier
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>  
+                            </div> 
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Armin Bracelet Vintage H124 - Homme - 4 Pcs.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Armin Bracelet Vintage H124 - Homme - 4 Pcs</p>
+                                        <p>80 DT</p>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex justify-content-center">
+                                  <!-- Button trigger modal -->
+                                  <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                     Ajouter au panier
+                                  </button>
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                           <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                           Produit ajouté avec succés au panier
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Armin Boucle D'oreille B103 - Argent.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Armin Boucle D'oreille B103 - Argent</p>
+                                        <p>120 DT</p>
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                           Ajouter au panier
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                 <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                 Produit ajouté avec succés au panier
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Collier pendentif fleur - Doré- Bijoux.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Collier pendentif fleur - Doré</p>
+                                        <p>60 DT</p>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                       Ajouter au panier
+                                    </button>
+                                     <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Lunettes Unisexe - 6 En 1 - Monture + 5 Appliques Polarisées.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Lunettes Homme - 6 En 1 - Monture + 5 Appliques Polarisées</p>
+                                        <p>70 DT</p>
+                                    </div>
+                                  </div>
+                                  <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Ajouter au panier
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Armin Bracelet Ensemble B212 - Vintage - Femme -  4 Pcs.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Armin Bracelet Ensemble B212 - Vintage - Femme -  4 Pcs</p>
+                                        <p>150 DT</p>
+                                    </div>
+                                  </div>
+                                  <div class="card-body d-flex justify-content-center">
+                                      <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Ajouter au panier
+                                    </button>
+                                     <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                  </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Armin Bracelet Ensemble B202 - Bohême - 5 Pcs.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Armin Bracelet Ensemble B202 - Bohême - 5 Pcs</p>
+                                        <p>45 DT</p>
+                                    </div>
+                                  </div>
+                                  <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Ajouter au panier
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Casio Montre Hommes - MCW-110H-2A - Garantie 2 Ans.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Casio Montre Hommes - MCW-110H-2A </p>
+                                        <p>100 DT</p>
+                                    </div>
+                                  </div>
+                                  <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Ajouter au panier
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-5">
+                                <div class="img-hover">
+                                    <img src="images/Produits/Montre bracelet femme.jpg" class="card-img-top image w-100" alt="...">
+                                    <div class="middle">
+                                        <p>Montre bracelet femme</p>
+                                        <p>65 DT</p>
+                                    </div>
+                                  </div>
+                                <div class="card-body d-flex justify-content-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" href="#" class="btn-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Ajouter au panier
+                                     </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Félicitation</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                           </div>
+                                           <div class="modal-body">
+                                              Produit ajouté avec succés au panier
+                                           </div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--           products card end          -->
+            </div>
+        </div>
+    </section>    
+    <!--                Products section end         -->
+    <!--           Footer section start              -->
+    <footer class="p-5">
+        <div class="container w-100">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 col-12 mb-5">
+                        <img src="images/Logo/logo.png" id="logo-footer" class="mb-3" alt="">
+                        <p class="mt-3 footer-description">"Zina Store" est un boutique de vente d'accessoires en ligne,</p>
+                    </div>
+                    <div class="col-md-4 col-12 mb-5">
+                        <h2 class="mb-4">Liens utiles</h2>
+                        <p class="liens-utiles"><a href="#">Produits les plus vendus</a></p>
+                        <p class="liens-utiles"><a href="#">Produits en promotion</a></p>
+                        <p class="liens-utiles"><a href="#">Les nouveautés</a></p>
+                    </div>
+                    <div class="col-md-4 col-12 mb-5">
+                        <h2 class="mb-4">Contactez nous</h2>
+                        <div class="row mb-5 col-12">
+                            <div class="col-lg-7 col-9">
+                                <input class="form-control newsletter-form" type="search" placeholder="Votre e-mail" aria-label="Search">
+                            </div>
+                            <div class="col-lg-5 col-3 newsletter-btn">
+                                <button href="#" class="btn">Envoyer</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 d-flex justify-content-center social-media">
+                                <div class="d-flex">
+                                    <div>
+                                        <a href=""><i class="fab fa-facebook-square footer-icon me-5"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href=""><i class="fab fa-twitter-square footer-icon me-5"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href=""><i class="fab fa-instagram-square footer-icon"></i></a>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="d-flex justify-content-center pt-3">
+                        <i class="fas fa-copyright copyright-icon me-2 my-auto"></i><span class="copyright">Copyright Zina Store</span> <i class="fas fa-heart copyright-icon mx-2 my-auto"></i><span class="copyright">2021</span>
+                     </div>     
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--              Footer section end             --> 
+    <!--                 Script                -->
+    <script src="js/theme.js"></script>
+    <script src="js/boutique.js"></script>
+    <script src="js/bootstrap.js"></script>   
+</body>
+</html>

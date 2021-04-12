@@ -1,0 +1,229 @@
+:root {
+    --primary-color : #FFFFFF;
+    --secondary-color : #000000;
+    --third-color : #f5f5f5;
+}
+
+.dark-theme {
+    --primary-color :#000000;
+    --secondary-color : #FFFFFF;
+    --third-color : #545454;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 20px !important;
+    
+}
+
+/*              Nav bar               */
+.navbar{
+   background-color: var(--third-color); 
+}
+
+#logo-navbar, #logo-footer{
+	width : auto; 
+	height : 6rem;
+}
+
+.nav-icon {
+    font-size: x-large;
+    color: var(--secondary-color);
+}
+
+.badge {
+    color: var(--secondary-color) !important;
+}
+
+@media screen and (min-width: 1000px){
+    .search-form {
+        width: 30rem;
+    }
+}
+
+.searchbox {
+    font-size: 1.2rem !important;
+}
+
+.searchbox:hover {
+    border: solid #EDA35B 2px  !important; 
+  }
+
+.btn-search:hover {
+    background: var(--primary-color);
+}
+
+.navbar-nav li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-right: 1.5rem;
+    text-decoration: none;
+}
+.modal-header, .modal-body{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.modal-body button{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#icon {
+    width: 1.8rem;
+    cursor: pointer;
+}
+
+/*           Header image             */
+.cover-img {
+    height: 30rem;
+}
+
+/*          Products section             */
+.filter-option, .filter-label{
+    color: var(--secondary-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
+
+@media screen and (max-width: 600px){
+    .top-filter{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.products-section {
+    background-color: var(--primary-color);
+}
+
+.custom-control-label, h4 {
+    color: var(--secondary-color);
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--secondary-color);
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.middle {
+    font-size: 1.5rem;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media screen and (min-width: 930px) and (max-width: 1200px) {
+    .middle {
+        font-size: 1.2rem ;
+    }
+}
+ 
+@media screen and (min-width: 765px) and (max-width: 929px) {
+    .middle {
+        font-size: 0.85rem ;
+    }
+}
+
+.img-hover:hover .image {
+    opacity: 0.3;
+}
+  
+.img-hover:hover .middle {
+    opacity: 1;
+}
+
+.card-body {
+  background-color: var(--primary-color);
+}
+
+.btn-cart {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 765px) and (max-width: 930px) {
+    .btn-cart {
+        font-size: 0.85rem ;
+    }
+}
+
+.btn-cart:hover {
+    color: var(--primary-color);
+}
+
+/*          Footer            */
+footer {
+   background-color: var(--third-color);
+}
+
+.liens-utiles a, .liens-utiles a:hover  {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.newsletter-form {
+    border: solid #EDA35B 2px  !important; 
+    border-right: none !important;
+}
+
+.newsletter-btn button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin-left: -1.35rem;
+}
+
+.newsletter-btn button:hover {
+    color: var(--primary-color);
+}
+
+.footer-icon {
+    font-size: xx-large;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+
+.copyright-icon , .footer-description, .copyright{
+    color: var(--secondary-color);
+}
+
+@media screen and (max-width: 400px){
+    .copyright, .copyright-icon {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .social-media {
+       margin-left : -2.7rem;
+    }
+}
+
+@media screen and (max-width: 1200px)  and (min-width: 985px){
+    .social-media {
+       margin-left : -2rem;
+    }
+}
