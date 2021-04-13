@@ -14,8 +14,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: 'Cormorant Garamond', serif !important;
-    font-size: 20px !important;
-    
+    font-size: 20px !important; 
 }
 
 /*              Nav bar               */
@@ -33,7 +32,7 @@ body {
     color: var(--secondary-color);
 }
 
-.badge {
+.badge{
     color: var(--secondary-color) !important;
 }
 
@@ -129,13 +128,13 @@ body {
     text-align: center;
 }
 
-@media screen and (min-width: 930px) and (max-width: 1200px) {
+@media screen and (min-width: 980px) and (max-width: 1200px) {
     .middle {
         font-size: 1.2rem ;
     }
 }
  
-@media screen and (min-width: 765px) and (max-width: 929px) {
+@media screen and (min-width: 765px) and (max-width: 979px) {
     .middle {
         font-size: 0.85rem ;
     }
@@ -227,3 +226,5 @@ h2 {
        margin-left : -2rem;
     }
 }
+
+/*           Cart page            */

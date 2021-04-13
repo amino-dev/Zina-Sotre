@@ -1,7 +1,7 @@
 var icon = document.getElementById("icon")
 var logoNavBar = document.getElementById("logo-navbar")
 var logoFooter = document.getElementById("logo-footer")
-icon.onclick = function() {
+icon.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme")
     if (document.body.classList.contains("dark-theme")) {
         icon.setAttribute("src","images/Theme/sun.png")
@@ -13,5 +13,5 @@ icon.onclick = function() {
         logoNavBar.setAttribute("src","images/Logo/logo.png")
         logoFooter.setAttribute("src","images/Logo/logo.png")
     }
-}
+})
 
