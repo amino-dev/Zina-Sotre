@@ -71,7 +71,7 @@ body {
     color: var(--primary-color);
 }
 
-#icon {
+#icon, #icon-cart {
     width: 1.8rem;
     cursor: pointer;
 }
@@ -138,6 +138,10 @@ body {
     .middle {
         font-size: 0.85rem ;
     }
+}
+
+.middle p {
+    color: black !important;
 }
 
 .img-hover:hover .image {
@@ -228,3 +232,10 @@ h2 {
 }
 
 /*           Cart page            */
+.cart-page {
+    background-color: var(--primary-color);
+}
+
+p,i,span,hr{
+    color: var(--secondary-color);
+}
