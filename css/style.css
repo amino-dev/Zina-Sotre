@@ -239,3 +239,33 @@ h2 {
 p,i,span,hr{
     color: var(--secondary-color);
 }
+
+.product-image{
+    width: 130px;
+}
+
+.product-name, .product-price, .product-quantity, .total,.total-price, .clear-cart{
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 800px)  and (min-width: 450px){
+    .product-image{
+      width: 100px !important;
+    }
+    .product-name, .product-price, .product-quantity, .total, .total-price, .clear-cart{
+        font-size: 1.1rem !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .product-image{
+      width: 50px !important;
+    }
+    .product-name, .product-price, .product-quantity, .total, .total-price, .clear-cart{
+        font-size: 0.9rem !important;
+    }
+    .product-quantity{
+        margin-right: -0.9rem !important;
+        margin-left: -0.9rem !important;
+    }
+}

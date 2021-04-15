@@ -88,8 +88,8 @@ function cartfavoris(product) {
 function onLoadPage(){
    let productNumbers = localStorage.getItem('cardNumbers')
    if(productNumbers){
-       document.querySelector('#badge-cart').innerHTML = productNumbers
-   }
+      document.querySelector('#badge-cart').innerHTML = productNumbers
+  }
    let favorisNumbers = localStorage.getItem("favorisNumbers")
    if(favorisNumbers){
       document.querySelector('#badge-favoris').innerHTML = favorisNumbers
@@ -147,31 +147,38 @@ function cartPage(){
    let cartCost=localStorage.getItem("totalPrice")
    if (cardItems && productSection){
        productSection.innerHTML=''; 
-       Object.values(cardItems).map(item=>{
+       Object.values(cardItems).map(item => {
          productSection.innerHTML+=
          `
           <div class="container mt-4">
            <div class="d-flex justify-content-between align-items-center p-3">
            <div> 
-           <img src="images/Produits/${item.imageSrc}" style="width: 130px;">
+           <img src="images/Produits/${item.imageSrc}" class="product-image";">
            </div>
-           <div class="name my-auto"> <h4>${item.name}</h4></div>
-           <div class="price my-auto" style="font-size: 1.5rem;"> <p>${item.price} Dt</p></div>
+           <div class="my-auto"> <h4 class = "product-name">${item.name}</h4></div>
+           <div class=" my-auto"> <p class = "product-price">${item.price} Dt</p></div>
            <div class="quantity my-auto">
-           <i class="fas fa-minus-circle add-product-icon me-2" style="font-size: 1.5rem;"></i><span style="font-size: 1.5rem;">${item.inCart}</span><i class="fas fa-plus-circle ms-2" style="font-size: 1.5rem;"></i>
+             <button type="button" class="btn" value="Decrease" id="dec" onclick="decNumber()">
+               <i class="fas fa-minus-circle" style="font-size: 1rem;"></i>
+             </button>
+             <span class="product-quantity" id="quantity">${item.inCart}</span>
+             <button type="button" class="btn" value="Increase" id="inc" onclick="incNumber()"/>
+               <i class="fas fa-plus-circle" style="font-size: 1rem;"></i>
+             </button>
            </div>
-           <div class="total my-auto" style="font-size: 1.5rem;"><p>${item.inCart*item.price} Dt</p></div>
-           <div><i class="fas fa-times-circle" style="font-size: 1.5rem;"></i></div>
+           <div class="total my-auto"><p class="total-product-price">${item.inCart*item.price} Dt</p></div>
+           <div><i class="fas fa-times-circle" style="font-size: 1.1rem;"></i></div>
            </div>
            <hr>
          </div> 
-         `
+         `  
      })
-
+     
+     
      productSection.innerHTML +=
      `
      <div class="d-flex justify-content-end pt-5 px-5 me-5"> 
-      <h4> Total : ${cartCost}, Dt</h4>
+      <h4 class = "total-price"> Total : ${cartCost}, Dt</h4>
      </div>
      <div class="d-flex justify-content-end p-5 me-5">
       <div>
@@ -182,11 +189,42 @@ function cartPage(){
      </div>
      `
 
-     var clearCart = document.querySelector(".clear-cart")
+     let clearCart = document.querySelector(".clear-cart")
      clearCart.addEventListener("click", () => {
      localStorage.clear()
      productSection.innerHTML = ''
+     /*
+     document.getElementById('badge-cart').textContent = 0
+     */
      }) 
+var i = 0 
+    document.getElementById("quantity").innerHTML = i;
+    var  prix = document.querySelector('.prix').textContent
+
+    function incNumber() {
+        if (i < 10) {
+            i++;
+        } else if (i = 10) {
+            i = 0;
+        }
+        document.getElementById("quantity").innerHTML = i;
+
+
+
+        prix = prix * i ; 
+        document.querySelector('.prix').innerHTML = prix;
+    }
+
+    function decNumber() {
+        if (i > 0) {
+            --i;
+        } else if (i = 0) {
+            i = 10;
+        }
+
+    }
+
+  
   }
 }
 
