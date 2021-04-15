@@ -22,12 +22,12 @@ body {
    background-color: var(--third-color); 
 }
 
-#logo-navbar, #logo-footer{
+#logo-navbar, #logo-footer, #logo{
 	width : auto; 
 	height : 6rem;
 }
 
-.nav-icon {
+.nav-icon, .icon-favoris {
     font-size: x-large;
     color: var(--secondary-color);
 }

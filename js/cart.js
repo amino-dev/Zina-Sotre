@@ -1,4 +1,5 @@
 const addToCart = document.querySelectorAll(".btn-cart")
+const addToFavoris = document.querySelectorAll(".btn-favoris")
 
 var products = [
    {
@@ -57,7 +58,6 @@ var products = [
    }
 ]
 
-
 for(let i = 0; i < addToCart.length; i++) {
    addToCart[i].addEventListener("click", () => {
         cartNumbers(products[i])
@@ -65,11 +65,35 @@ for(let i = 0; i < addToCart.length; i++) {
     })
 }
 
-function onLoadCartPage(){
+
+for(let i = 0; i < addToFavoris.length; i++) {
+   addToFavoris[i].addEventListener("click", () => {
+        cartfavoris(products[i])
+    })
+}
+
+function cartfavoris(product) {
+   let favorisNumbers = localStorage.getItem("favorisNumbers")
+   favorisNumbers = parseInt(favorisNumbers)
+   if (favorisNumbers) {
+      localStorage.setItem("favorisNumbers" , favorisNumbers + 1)
+      document.querySelector('#badge-favoris').innerHTML = favorisNumbers + 1
+   }
+   else {
+      localStorage.setItem("favorisNumbers" , 1)
+      document.querySelector('#badge-favoris').innerHTML = 1
+   }
+}
+
+function onLoadPage(){
    let productNumbers = localStorage.getItem('cardNumbers')
    if(productNumbers){
-       document.querySelector('.badge').innerHTML = productNumbers
+       document.querySelector('#badge-cart').innerHTML = productNumbers
    }
+   let favorisNumbers = localStorage.getItem("favorisNumbers")
+   if(favorisNumbers){
+      document.querySelector('#badge-favoris').innerHTML = favorisNumbers
+  }
 }
 
 function cartNumbers(product) {
@@ -77,11 +101,11 @@ function cartNumbers(product) {
    productNumbers = parseInt(productNumbers)
    if (productNumbers) {
       localStorage.setItem("cardNumbers" , productNumbers + 1)
-      document.querySelector('.badge').innerHTML = productNumbers + 1
+      document.querySelector('#badge-cart').innerHTML = productNumbers + 1
    }
    else {
       localStorage.setItem("cardNumbers" , 1)
-      document.querySelector('.badge').innerHTML = 1
+      document.querySelector('#badge-cart').innerHTML = 1
    }
    addItems(product)
 }
@@ -134,7 +158,7 @@ function cartPage(){
            <div class="name my-auto"> <h4>${item.name}</h4></div>
            <div class="price my-auto" style="font-size: 1.5rem;"> <p>${item.price} Dt</p></div>
            <div class="quantity my-auto">
-           <i class="fas fa-minus-circle me-1" style="font-size: 1.5rem;"></i><span style="font-size: 1.5rem;">${item.inCart}</span><i class="fas fa-plus-circle ms-1" style="font-size: 1.5rem;"></i>
+           <i class="fas fa-minus-circle add-product-icon me-2" style="font-size: 1.5rem;"></i><span style="font-size: 1.5rem;">${item.inCart}</span><i class="fas fa-plus-circle ms-2" style="font-size: 1.5rem;"></i>
            </div>
            <div class="total my-auto" style="font-size: 1.5rem;"><p>${item.inCart*item.price} Dt</p></div>
            <div><i class="fas fa-times-circle" style="font-size: 1.5rem;"></i></div>
@@ -144,16 +168,32 @@ function cartPage(){
          `
      })
 
-     productSection.innerHTML +=`
-     <div class="d-flex justify-content-end p-5 me-3"> 
-     <h5> Total : ${cartCost}, Dt</h5>
-     </div>
-    </div>
+     productSection.innerHTML +=
      `
- }
+     <div class="d-flex justify-content-end pt-5 px-5 me-5"> 
+      <h4> Total : ${cartCost}, Dt</h4>
+     </div>
+     <div class="d-flex justify-content-end p-5 me-5">
+      <div>
+       <button type="button" href="#" class="btn-cart clear-cart">
+         Vider le panier
+       </button>
+      </div>  
+     </div>
+     `
+
+     var clearCart = document.querySelector(".clear-cart")
+     clearCart.addEventListener("click", () => {
+     localStorage.clear()
+     productSection.innerHTML = ''
+     }) 
+  }
 }
 
+
+
 cartPage()
-onLoadCartPage()
+onLoadPage()
+
 
 
