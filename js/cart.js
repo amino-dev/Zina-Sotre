@@ -6,55 +6,65 @@ var products = [
       name : 'Anneaux',
       price : 40,
       imageSrc : 'Anneau.jpg',
-      inCart : 0
+      inCart : 0,
+      favoris : 0
    },
    {
       name : 'Bracelet',
       imageSrc : 'Bracelet-homme.jpg',
       price : 80,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    },
    {
       name : 'Boucle',
       imageSrc : 'Boucle-femme.jpg',
       price : 120,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    },
    {
       name : 'Collier',
       imageSrc : 'Collier-femme.jpg',
       price : 60,
-      inCart : 0 
+      inCart : 0,
+      inCart : 0,
+      favoris : 0
    },
    {
       name : 'Lunettes',
       imageSrc : 'Lunettes-homme.jpg',
       price : 70,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    },
    {
       name : 'Bracelet',
       imageSrc : 'Bracelet2-femme.jpg',
       price : 150,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    },
    {
-      name : 'Armin Bracelet Ensemble B202 - Bohême - 5 Pcs',
+      name : 'Bracelet',
       imageSrc : 'Bracelet1-femme.jpg',
       price : 45,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    },
    {
-      name : 'Casio Montre Hommes - MCW-110H-2A',
+      name : 'Montre',
       imageSrc : 'Montre-homme.jpg',
       price : 100,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0 
    },
    {
-      name : 'Montre bracelet femme',
+      name : 'Montre bracelet',
       imageSrc : 'Montre-bracelet-femme.jpg',
       price : 65,
-      inCart : 0 
+      inCart : 0,
+      favoris : 0
    }
 ]
 
@@ -83,7 +93,35 @@ function cartfavoris(product) {
       localStorage.setItem("favorisNumbers" , 1)
       document.querySelector('#badge-favoris').innerHTML = 1
    }
+  /* addFavoris(product)*/
 }
+
+
+/*function addFavoris(product) {
+   let cartFavoris = localStorage.getItem("productsInFavoris")
+   cartFavoris = JSON.parse(cartFavoris)
+   if(cartFavoris != null) {
+      if(cartFavoris[product.imageSrc] == undefined) {
+         cartFavoris = {
+            ...cartFavoris,
+            [product.imageSrc]: product
+         }
+      cartFavoris[product.imageSrc].favoris += 1
+      } else {
+      cartFavoris[product.imageSrc].favoris =  1
+      cartFavoris = {
+         [product.imageSrc]: product
+      }
+    }
+   } else {
+      product.favoris = 1
+      cartFavoris = {
+         [product.imageSrc]: product
+      }
+   }
+   localStorage.setItem("productsInFavoris",JSON.stringify(cartFavoris))
+}
+*/
 
 function onLoadPage(){
    let productNumbers = localStorage.getItem('cardNumbers')
@@ -153,21 +191,20 @@ function cartPage(){
           <div class="container mt-4">
            <div class="d-flex justify-content-between align-items-center p-3">
            <div> 
-           <img src="images/Produits/${item.imageSrc}" class="product-image";">
+           <img src="images/Produits/${item.imageSrc}" class="product-image my-auto";">
            </div>
-           <div class="my-auto"> <h4 class = "product-name">${item.name}</h4></div>
-           <div class=" my-auto"> <p class = "product-price">${item.price} Dt</p></div>
-           <div class="quantity my-auto">
-             <button type="button" class="btn" value="Decrease" id="dec" onclick="decNumber()">
-               <i class="fas fa-minus-circle" style="font-size: 1rem;"></i>
+           <div class=""> <h4 class = "product-name my-auto">${item.name}</h4></div>
+           <div class=""> <p class = "product-price my-auto">${item.price} Dt</p></div>
+           <div class="">
+             <button type="button" class="btn">
+               <i class="fas fa-minus-circle my-auto" style="font-size: 1rem;"></i>
              </button>
-             <span class="product-quantity" id="quantity">${item.inCart}</span>
-             <button type="button" class="btn" value="Increase" id="inc" onclick="incNumber()"/>
-               <i class="fas fa-plus-circle" style="font-size: 1rem;"></i>
+             <span class="product-quantity my-auto" id="quantity">${item.inCart}</span>
+             <button type="button" class="btn">
+               <i class="fas fa-plus-circle my-auto" style="font-size: 1rem;"></i>
              </button>
            </div>
-           <div class="total my-auto"><p class="total-product-price">${item.inCart*item.price} Dt</p></div>
-           <div><i class="fas fa-times-circle" style="font-size: 1.1rem;"></i></div>
+           <div class="total"><p class="total-product-price my-auto">${item.inCart*item.price} Dt</p></div>
            </div>
            <hr>
          </div> 
@@ -191,13 +228,14 @@ function cartPage(){
 
      let clearCart = document.querySelector(".clear-cart")
      clearCart.addEventListener("click", () => {
-     localStorage.clear()
+     localStorage.removeItem("productsInCart")
+     localStorage.removeItem("cardNumbers")
+     localStorage.removeItem("totalPrice")
      productSection.innerHTML = ''
-     /*
-     document.getElementById('badge-cart').textContent = 0
-     */
+     document.querySelector('#badge-cart').innerHTML = 0
      }) 
-var i = 0 
+     /*
+     var i = 0 
     document.getElementById("quantity").innerHTML = i;
     var  prix = document.querySelector('.prix').textContent
 
@@ -223,13 +261,10 @@ var i = 0
         }
 
     }
-
+*/
   
   }
 }
-
-
-
 cartPage()
 onLoadPage()
 

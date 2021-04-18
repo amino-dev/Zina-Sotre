@@ -9,17 +9,98 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
+     <!--                Nav bar start              -->
+     <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a href="boutique.html">
+                <img id="logo-navbar" src="images/Logo/logo.png" alt="logo" >
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mx-auto me-lg-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li>
+                    <form class="d-flex search-form">
+                       <input class="form-control searchbox" type="search" placeholder="Chercher" aria-label="Search">
+                       <div class="input-group-btn">
+                        <button class="btn btn-search" id="btn-search" type="submit"><i class="fas fa-search nav-icon"></i></button>
+                       </div>
+                    </form>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li>
+                            <!--                Dark mode             -->
+     
+                    <button type="button" class="btn nav-btn mt-3 mb-3">
+                        <img src="images/Theme/moon.png" alt="" id="icon">
+                    </button>   
+                </li>
+                <li>
+                    <!-- Log in trigger modal -->
+                    <button type="button" class="btn nav-btn mt-3 mb-3 me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="fas fa-user nav-icon"></i>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Se connecter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <!-- Email -->
+                            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                            <!-- Password -->
+                            <input type="password" id="defaultLoginFormPassword" required class="form-control mb-4" placeholder="Mot de passe">
+                            <div class="d-flex justify-content-around">
+                              <div>
+                                <!-- Remember me -->
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                    <label class="custom-control-label" for="defaultLoginFormRemember">Souvenir de moi</label>
+                                  </div>
+                              </div>
+                              <div>
+                                <!-- Forgot password -->
+                                <a href="">Mot de passe oublié ?</a>
+                              </div>
+                            </div>
+                            <!-- Sign in modal button -->
+                            <div class="col-md-12">
+                              <div>
+                                <button class="btn my-4 btn-block w-100" type="submit">Se connecter</button>
+                              </div>
+                            </div>
+                            <!-- Register -->
+                            <p class="text-center">Pas un membre?
+                              <a href="">S'inscrire</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="btn  nav-btn mt-3 mb-3 me-3">
+                        <i class="fas fa-heart nav-icon"><span class="badge ms-1" id="badge-favoris">0</span></i>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn nav-btn mt-3 mb-3">
+                        <a href="cart.html" target="_blank"><i class="fas fa-shopping-cart nav-icon"><span class="badge ms-1" id="badge-cart">0</span></i></a>
+                    </button>
+                </li>
+            </ul> 
+          </div>
+        </div>
+    </nav>
+    <!--                Nav bar end              -->
     <section class="cart-page">
-        <!--                Dark mode             -->
-     <div class="container">
-        <button type="button" class="btn nav-btn mt-3 mb-3">
-            <img src="images/Theme/moon.png" alt="" id="icon-cart">
-        </button>   
-     </div>
         <!--                 Card Section                -->
      <div class="cart-section">
         <!--        
@@ -42,7 +123,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4 col-12 mb-5">
-                        <img src="images/Logo/logo.png" id="logo" class="mb-3" alt="">
+                        <img src="images/Logo/logo.png" id="logo-footer" class="mb-3" alt="">
                         <p class="mt-3 footer-description">"Zina Store" est un boutique de vente d'accessoires en ligne,</p>
                     </div>
                     <div class="col-md-4 col-12 mb-5">
@@ -89,7 +170,7 @@
     <!--              Footer section end             --> 
    
     <!--                 Script                -->
-    <script src="js/cart-theme.js"></script>
+    <script src="js/theme.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/bootstrap.js"></script>   
 </body>

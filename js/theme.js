@@ -14,5 +14,3 @@ icon.addEventListener("click", () => {
         logoFooter.setAttribute("src","images/Logo/logo.png")
     }
 })
-
-

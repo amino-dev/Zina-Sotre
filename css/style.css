@@ -9,12 +9,13 @@
     --secondary-color : #FFFFFF;
     --third-color : #545454;
 }
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap%27');
 
 body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: 'Cormorant Garamond', serif !important;
-    font-size: 20px !important; 
+    font-size: 15px !important; 
 }
 
 /*              Nav bar               */
@@ -101,6 +102,25 @@ body {
 
 .custom-control-label, h4 {
     color: var(--secondary-color);
+    font-size: 1.1rem;   
+}
+
+@media screen and (max-width: 940px) {
+    .custom-control-label, h4 {
+        font-size: 1rem ;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .custom-control-label, h4 {
+        font-size: 0.80rem ;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .custom-control-label, h4 {
+        font-size: 1.2rem ;
+    }
 }
 
 .card {
@@ -130,13 +150,13 @@ body {
 
 @media screen and (min-width: 980px) and (max-width: 1200px) {
     .middle {
-        font-size: 1.2rem ;
+        font-size: 1rem ;
     }
 }
  
 @media screen and (min-width: 765px) and (max-width: 979px) {
     .middle {
-        font-size: 0.85rem ;
+        font-size: 0.65rem ;
     }
 }
 
@@ -161,12 +181,21 @@ body {
     color: var(--primary-color);
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
-@media screen and (min-width: 765px) and (max-width: 930px) {
-    .btn-cart {
-        font-size: 0.85rem ;
+@media screen and (min-width: 1000px) and (max-width: 1250px) {
+    .btn-cart, .icon-favoris {
+        font-size: 0.8rem ;
+    }
+}
+
+@media screen and (min-width: 765px) and (max-width: 1000px) {
+    .btn-cart{
+        font-size: 0.7rem ;
+    }
+    .icon-favoris {
+        font-size: 0.9rem;
     }
 }
 
@@ -234,6 +263,7 @@ h2 {
 /*           Cart page            */
 .cart-page {
     background-color: var(--primary-color);
+    margin-top: -1.5rem;
 }
 
 p,i,span,hr{
@@ -253,7 +283,11 @@ p,i,span,hr{
       width: 100px !important;
     }
     .product-name, .product-price, .product-quantity, .total, .total-price, .clear-cart{
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+    }
+    .product-quantity{
+        margin-right: -0.7rem !important;
+        margin-left: -0.7rem !important;
     }
 }
 
