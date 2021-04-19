@@ -1,6 +1,8 @@
+
 const addToCart = document.querySelectorAll(".btn-cart")
 const addToFavoris = document.querySelectorAll(".btn-favoris")
 
+//          products object           
 var products = [
    {
       name : 'Anneaux',
@@ -68,6 +70,8 @@ var products = [
    }
 ]
 
+
+//      adding to cart           
 for(let i = 0; i < addToCart.length; i++) {
    addToCart[i].addEventListener("click", () => {
         cartNumbers(products[i])
@@ -76,12 +80,15 @@ for(let i = 0; i < addToCart.length; i++) {
 }
 
 
+//          adding to favoris           
 for(let i = 0; i < addToFavoris.length; i++) {
    addToFavoris[i].addEventListener("click", () => {
         cartfavoris(products[i])
     })
 }
 
+
+//        cart favoris          
 function cartfavoris(product) {
    let favorisNumbers = localStorage.getItem("favorisNumbers")
    favorisNumbers = parseInt(favorisNumbers)
@@ -93,9 +100,8 @@ function cartfavoris(product) {
       localStorage.setItem("favorisNumbers" , 1)
       document.querySelector('#badge-favoris').innerHTML = 1
    }
-  /* addFavoris(product)*/
+  //addFavoris(product)
 }
-
 
 /*function addFavoris(product) {
    let cartFavoris = localStorage.getItem("productsInFavoris")
@@ -120,9 +126,9 @@ function cartfavoris(product) {
       }
    }
    localStorage.setItem("productsInFavoris",JSON.stringify(cartFavoris))
-}
-*/
+}*/
 
+//       loading page         
 function onLoadPage(){
    let productNumbers = localStorage.getItem('cardNumbers')
    if(productNumbers){
@@ -134,6 +140,7 @@ function onLoadPage(){
   }
 }
 
+//        cart numbers          
 function cartNumbers(product) {
    let productNumbers = localStorage.getItem("cardNumbers")
    productNumbers = parseInt(productNumbers)
@@ -148,6 +155,7 @@ function cartNumbers(product) {
    addItems(product)
 }
 
+//          add items to cart         
 function addItems(product) {
    let cartItems = localStorage.getItem("productsInCart")
    cartItems = JSON.parse(cartItems)
@@ -168,6 +176,7 @@ function addItems(product) {
    localStorage.setItem("productsInCart",JSON.stringify(cartItems))
 }
 
+//         total price         
 function totalPrice(product) {
      let cartCost = localStorage.getItem("totalPrice")
      if(cartCost != null) {
@@ -178,6 +187,8 @@ function totalPrice(product) {
      }
 }
 
+
+//          add items to cart page       
 function cartPage(){
    let cardItems=localStorage.getItem('productsInCart');
    cardItems=JSON.parse(cardItems);
@@ -212,6 +223,7 @@ function cartPage(){
      })
      
      
+     //     add total cost and clear button         
      productSection.innerHTML +=
      `
      <div class="d-flex justify-content-end pt-5 px-5 me-5"> 
@@ -226,6 +238,7 @@ function cartPage(){
      </div>
      `
 
+     //         clear button       
      let clearCart = document.querySelector(".clear-cart")
      clearCart.addEventListener("click", () => {
      localStorage.removeItem("productsInCart")
@@ -265,8 +278,33 @@ function cartPage(){
   
   }
 }
+
 cartPage()
 onLoadPage()
 
+/*let filter = document.querySelector('.filter').children
+let category = document.querySelector('.categories').children.children
 
+for (let i = 0; i < filter.length; i++){
+   filter[i].onclick = function(){
+      for (let x = 0; x < filter.length; x++){
+         filter[x].classList.remove('active')
+      }
+      this.classList.add('active')
+      const dsiplayItems = this.getAttribute('data-filter')
+      for (let z = 0; z < category.length; z++) {
+         category[z].style.transform = 'scale(0)'
+         setTimeout(() => {
+            category[z].style.display = 'none'
+         }, 500)
+         if ((category[z].getAttribute('data-category') == dsiplayItems) || (dsiplayItems == 'all'))
+         {
+            category[z].style.transform = 'scale(1)'
+            setTimeout(() => {
+               category[z].style.display = 'block'
+            }, 500)
+         }
+      }
 
+   }
+}*/
